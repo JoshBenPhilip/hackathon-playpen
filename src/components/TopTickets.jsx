@@ -10,10 +10,6 @@ export default function TopTickets() {
         <p>{fakeData()[0].id1.score}</p>
         <p>{fakeData()[0].id1.coords}</p>
       </div>
-      <h2>task 2</h2>
-      <h2>task 3</h2>
-      <h2>task 4</h2>
-      <h2>task 5</h2>
     </div>
   );
 }
