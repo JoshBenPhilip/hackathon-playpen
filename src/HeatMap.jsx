@@ -1,10 +1,9 @@
 import "./App.css";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoiam9zaGJlbnBoaWxpcCIsImEiOiJjbDkwNnZxMzMwd201M3ZwOHBhdHhuMTh6In0.G5QStu3kuENYWaEJmoSfbw";
-function App() {
+export default function HeatMap() {
+  mapboxgl.accessToken =
+    "pk.eyJ1Ijoiam9zaGJlbnBoaWxpcCIsImEiOiJjbDkwNnZxMzMwd201M3ZwOHBhdHhuMTh6In0.G5QStu3kuENYWaEJmoSfbw";
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-80);
@@ -283,5 +282,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
