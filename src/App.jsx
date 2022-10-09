@@ -1,10 +1,10 @@
 import "./App.css";
-import HeatMap from "./HeatMap";
+import HeatMapPage from "./pages/HeatMapPage";
 
 function App() {
   return (
     <div className="App">
-      <HeatMap />
+      <HeatMapPage />
     </div>
   );
 }
