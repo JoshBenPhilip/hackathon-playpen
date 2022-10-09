@@ -10,118 +10,6 @@ function App() {
   const [lng, setLng] = useState(-80);
   const [lat, setLat] = useState(40.4);
   const [zoom, setZoom] = useState(11);
-  const fetchTickets = () => {
-    return [
-      {
-        score: 0,
-        coords: [-79.91746, 40.44356],
-      },
-
-      {
-        score: 1000000000,
-        coords: [-79.94606, 40.44961],
-      },
-
-      {
-        score: 600000000,
-        coords: [-80.00474, 40.39283],
-      },
-
-      {
-        score: 2,
-        coords: [-80.00949, 40.42532],
-      },
-
-      {
-        score: 12,
-        coords: [-79.93531, 40.42282],
-      },
-
-      {
-        score: 12,
-        coords: [-79.91199, 40.37286],
-      },
-
-      {
-        score: 10,
-        coords: [-79.93244, 40.43484],
-      },
-
-      {
-        score: -1,
-        coords: [-79.92158, 40.43892],
-      },
-
-      {
-        score: 17,
-        coords: [-79.97294, 40.40908],
-      },
-
-      {
-        score: 13,
-        coords: [-79.97291, 40.42896],
-      },
-
-      {
-        score: 9,
-        coords: [-80.05708, 40.45932],
-      },
-
-      {
-        score: 10,
-        coords: [-79.91069, 40.37747],
-      },
-
-      {
-        score: 4,
-        coords: [-79.98257, 40.43154],
-      },
-
-      {
-        score: 5,
-        coords: [-79.99177, 40.42093],
-      },
-
-      {
-        score: 2,
-        coords: [-80.02488, 40.41999],
-      },
-
-      {
-        score: 1,
-        coords: [-79.99531, 40.41504],
-      },
-
-      {
-        score: 8,
-        coords: [-80.0148, 40.43467],
-      },
-
-      {
-        score: 6,
-        coords: [-80.02489, 40.41446],
-      },
-
-      {
-        score: -1,
-        coords: [-80.01647, 40.40107],
-      },
-    ];
-  };
-  const buildData = () => {
-    const data = fetchTickets();
-    const geojsonData = data.map(({ score, coords }) => {
-      return JSON.stringify({
-        type: "Feature",
-        properties: { dbh: score },
-        geometry: { type: "Point", coordinates: coords },
-      });
-    });
-    return {
-      type: "FeatureCollection",
-      features: geojsonData,
-    };
-  };
 
   useEffect(() => {
     if (map.current) return; // initialize map only once
@@ -142,11 +30,9 @@ function App() {
     });
 
     map.current.on("load", () => {
-      const datum = buildData();
-      console.log(datum);
       map.current.addSource("trees", {
         type: "geojson",
-        data: "../public/trees.geojson",
+        data: "./trees.geojson",
       });
       // add heatmap layer here
       map.current.addLayer(
