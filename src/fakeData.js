@@ -8,21 +8,21 @@ export default function fakeData() {
           "https://gray-wxix-prod.cdn.arcpublishing.com/resizer/2NvTvCCtnLdZ1PNLQhOdA-NxgB0=/1200x675/smart/filters:quality(85)/cloudfront-us-east-1.images.arcpublishing.com/gray/JZKZOZMSUNFSXB6H4QESGAFD7Y.jpg",
         subject: "Pothole",
         description: "This Pot Hole is breaking my tires and my Back! FIX IT!",
-        score: 19191990,
+        score: 350,
         coords: [-79.91746, 40.44356],
       },
 
       id2: {
         subject: "Pothole",
         description: "This Pot Hole is breaking my tires and my Back! FIX IT!",
-        score: 19191991000000000,
+        score: 279,
         coords: [-79.94606, 40.44961],
       },
 
       id3: {
         subject: "Pothole",
         description: "This Pot Hole is breaking my tires and my Back! FIX IT!",
-        score: 1919199600000000,
+        score: 300,
         coords: [-80.00474, 40.39283],
       },
 
