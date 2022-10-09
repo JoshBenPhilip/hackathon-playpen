@@ -30,9 +30,24 @@ function App() {
     });
 
     map.current.on("load", () => {
+      const s = {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            properties: { dbh: 111 },
+            geometry: { type: "Point", coordinates: [-79.91746, 40.44356] },
+          },
+          {
+            type: "Feature",
+            properties: { dbh: 1200000000000 },
+            geometry: { type: "Point", coordinates: [-79.94606, 40.44961] },
+          },
+        ],
+      };
       map.current.addSource("trees", {
         type: "geojson",
-        data: "./trees.geojson",
+        data: s,
       });
       // add heatmap layer here
       map.current.addLayer(
